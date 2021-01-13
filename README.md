@@ -38,4 +38,4 @@ That's it.
 # TODO
 
 1. Make it possible to supply arguments, which can set another path for the configuration file, another BT threshold, etc.
-
+2. Do not execute the hcitool, but use a BT library directly.
