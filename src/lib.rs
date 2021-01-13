@@ -46,6 +46,11 @@ pub extern fn pam_sm_authenticate(pamh: *mut pam_handle_t, _flags: c_int, _argc:
     return PAM_AUTH_ERR;
 }
 
+#[no_mangle]
+pub extern fn pam_sm_setcred(_pamh: *mut pam_handle_t, _flags: c_int, _argc: c_int, _argv: *const *const c_char) -> u32 {
+    return PAM_SUCCESS;
+}
+
 fn get_device_id_from_users_file(username: &str, filename: &str) -> Option<String> {
     let meta = match fs::metadata(filename) {
         Ok(m) => m,
